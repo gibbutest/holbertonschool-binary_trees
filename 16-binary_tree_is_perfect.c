@@ -25,7 +25,7 @@ size_t get_depth(const binary_tree_t *tree)
 int is_perfect(const binary_tree_t *node, int depth)
 {
 	if (!node)
-		return (0 == depth);
+		return (depth == 0);
 
 	if (!node->left != !node->right)
 		return (0);

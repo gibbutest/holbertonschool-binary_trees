@@ -34,7 +34,7 @@ int is_perfect(const binary_tree_t *node, int max_depth, int current_level)
 		return (1);
 
 	if (!node->left && !node->right)
-		return (max_depth + current_level + 1);
+		return (max_depth + current_level + 1 ? 1 : 0);
 
 	if (!node->left || !node->right)
 		return (0);

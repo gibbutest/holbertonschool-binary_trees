@@ -18,14 +18,14 @@ size_t get_depth(const binary_tree_t *tree)
 /**
  * is_perfect - Checks if the tree is perfect
  * @node: The node to search through
- * @current_level: The level of the node
+ * @depth: The expected depth of the node
  *
  * Return: 0 if not perfect, 1 if is perfect
  */
 int is_perfect(const binary_tree_t *node, int depth)
 {
 	if (!node)
-		return 0 == depth;
+		return (0 == depth);
 
 	if (!node->left != !node->right)
 		return (0);
@@ -44,5 +44,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int depth = get_depth(tree);
 
-	return is_perfect(tree, depth);
+	if (!tree)
+		return (1);
+
+	return (is_perfect(tree, depth));
 }

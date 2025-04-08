@@ -4,6 +4,8 @@
  * binary_tree_node - Creates a tree node
  * @parent: The parent pointer
  * @value: The value to be stored
+ *
+ * Return: pointer to the new child
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
@@ -24,7 +26,7 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 		return (parent);
 	}
 
-	child->parent = child;
+	child->parent = parent;
 
 	return (child);
 }
